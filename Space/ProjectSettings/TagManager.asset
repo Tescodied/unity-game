@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Mine
+  - Object
+  - Fishing
+  - Points
+  - Fishing Rod
+  - Shed
+  - Workbench
+  - Equipable
+  - Player Axe
+  - Leave
+  - Tree Collider
+  - Tree Spawner
+  - Player (Fishing)
+  - Player Axe (On Back)
+  - Player Pickaxe
+  - Player Pickaxe (On Back)
+  - Pickaxe Workbench
+  - Axe Blueprint
+  - Blueprint Unlock (Axe)
+  - Crafting Table
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - 
+  - Walls
+  - Floor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default
