@@ -15,7 +15,7 @@ public class TreeMine : MonoBehaviour
     private float playerMineCounter = 0f;
     private bool mineCounterEnabled = false;
 
-    private int hitsNecessary = 3;
+    private int hitsNecessary = 5;
     private int hitsTaken = 0;
 
     public bool playerInRange;

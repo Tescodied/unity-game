@@ -11,15 +11,17 @@ public class ShedBlueprintLogic : MonoBehaviour
     private List<string> usedScenes = new();
 
     Player mainScript;
+    RecipeUnlockCheck recipeScript;
 
     void Start()
     {
         shedWorkbenchBlueprint = GameObject.FindGameObjectWithTag("Axe Blueprint");
         mainScript = GetComponent<Player>();
+        recipeScript = GameObject.FindGameObjectWithTag("Recipes UI").GetComponent<RecipeUnlockCheck>();
 
         usedScenes.Add(mainScript.shedSceneName);
-
-        if (PlayerPrefs.GetInt("Axe Blueprint Unlocked") == 1)
+        //change
+        if (recipeScript.playerRecipesUnlocked["Wooden Axe"] == 1)
         {
             if (mainScript.sceneName == mainScript.shedSceneName)
             {
@@ -56,7 +58,7 @@ public class ShedBlueprintLogic : MonoBehaviour
             Destroy(obj);
         }
 
-        PlayerPrefs.SetInt("Axe Blueprint Unlocked", 1);
+        PlayerPrefs.SetInt(recipeScript.recipePlayerPrefPreffix + "Wooden Axe", 1);
 
         SpriteRenderer workbenchRenderer = shedWorkbenchBlueprint.GetComponent<SpriteRenderer>();
         workbenchRenderer.enabled = false;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,11 +11,10 @@ public class FishingLogic : MonoBehaviour
 
     // References
     public Transform fishingPositioner;
-    private Vector3 fishingPosition;
+    Vector3 fishingPosition;
     public List<GameObject> fishingGameObjects = new();
     public SpriteRenderer fishingRod;
 
-    private bool sceneIsMain;
     Player mainScript;
     MovementLogic movementScript;
 
@@ -24,7 +22,6 @@ public class FishingLogic : MonoBehaviour
     {
         mainScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         movementScript = GetComponent<MovementLogic>();
-        sceneIsMain = SceneManager.GetActiveScene().name == mainScript.mainSceneName;
 
         usedScenes.Add(mainScript.mainSceneName);
 
@@ -36,7 +33,7 @@ public class FishingLogic : MonoBehaviour
 
     public void FishingCheck(string sceneName)
     {
-        if (!sceneIsMain || fishingRod == null || !usedScenes.Contains(sceneName))
+        if (fishingRod == null || !usedScenes.Contains(sceneName))
             return;
 
         if (touchingFishing)

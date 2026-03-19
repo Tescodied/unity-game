@@ -16,23 +16,9 @@ public class ConfigureUILogic : MonoBehaviour
     public void ConfigureUI()
     {
         // Enter UI
-        if (mainScript.enableEnterUI)
-        {
-            enterUI.SetActive(true);
-        }
-        else
-        {
-            enterUI.SetActive(false);
-        }
+        enterUI.SetActive(mainScript.enableEnterUI);
 
         // Exit UI
-        if (mainScript.enableExitUI)
-        {
-            exitUI.SetActive(true);
-        }
-        else
-        {
-            exitUI.SetActive(false);
-        }
+        exitUI.SetActive(mainScript.enableExitUI);
     }
 }

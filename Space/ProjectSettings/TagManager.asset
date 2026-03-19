@@ -24,6 +24,13 @@ TagManager:
   - Axe Blueprint
   - Blueprint Unlock (Axe)
   - Crafting Table
+  - Inventory Slot
+  - Crafting Recipe (Wooden Axe)
+  - Crafting Recipe (Wooden Pickaxe)
+  - Crafting Recipe Locked (Wooden Axe)
+  - Crafting Recipe Locked (Wooden Pickaxe)
+  - Recipes UI
+  - Crafting UI
   layers:
   - Default
   - TransparentFX

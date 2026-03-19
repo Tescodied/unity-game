@@ -51,12 +51,15 @@ public class Player : MonoBehaviour
 
     // Wood
     public static int wood = 0;
-    public TextMeshProUGUI woodCount;
 
-    // Fishing (Overrider)
+    // Movement Overriders (Crafting && Fishing)
     public bool isFishing = false;
+    public bool isCrafting = false;
 
-    //Scripts
+    // Crafting Menu
+    public bool craftMenuEnable = false;
+
+    // Scripts
     FishingLogic fishingScript;
     ShedLogic shedScript;
     ShedWorkbenchLogic shedWorkbenchScript;
@@ -67,7 +70,14 @@ public class Player : MonoBehaviour
     LeaveColliderLogic leaveColliderScript;
     ConfigureUILogic uiScript;
     MovementLogic movementScript;
+    CraftingTableLogic craftingCollisionScript;
+    TreeWoodGain woodGainScript;
 
+    // Inventory
+    public Dictionary<string, int> inventory = new Dictionary<string, int>();
+
+    // Unnecessary but remove vs code error
+    [Obsolete]
     void Awake()
     {
         // Scene Configuration
@@ -113,6 +123,8 @@ public class Player : MonoBehaviour
         leaveColliderScript = GetComponent<LeaveColliderLogic>();
         uiScript = GetComponent<ConfigureUILogic>();
         movementScript = GetComponent<MovementLogic>();
+        craftingCollisionScript = GetComponent<CraftingTableLogic>();
+        woodGainScript = GetComponent<TreeWoodGain>();
 
         // Test mode:
         //PlayerPrefs.DeleteKey("Equipped Axe");
@@ -125,8 +137,9 @@ public class Player : MonoBehaviour
         enableEnterUI = false;
         enableExitUI = false;
 
-        // Move if not locked/running into an object
-        if (!disableMovement && !isFishing)
+        // Move if not locked/running into an object, 
+        // can just only use diable movement but other vars for debug clarity
+        if (!disableMovement && !isFishing && !isCrafting)
         {
             movementScript.Movement();
         }
@@ -139,16 +152,22 @@ public class Player : MonoBehaviour
         mineWorkbenchLogic.MineWorkbenchCheck(sceneName);
         leaveColliderScript.LeaveCheck(mainSceneName, sceneName);
         fishingScript.FishingCheck(sceneName);
+        craftingCollisionScript.CraftingCheck(sceneName);
 
         // Player UI enable/disable
         uiScript.ConfigureUI();
 
-        // Wood
-        woodCount.text = $"{wood}";
-
         // Tools
         toolToggleScript.AxeToggle();
         toolToggleScript.PickaxeToggle();
+
+        // Inventory
+        woodGainScript.InventoryUpdate(sceneName);
+
+        foreach (KeyValuePair<string, int> item in inventory)
+        {
+            //Debug.Log(item.Key + " " + item.Value);
+        }
     }
 
     public void ChangeCamSize(float size)
@@ -156,10 +175,5 @@ public class Player : MonoBehaviour
         var lens = vcam.Lens;
         lens.OrthographicSize = size;
         vcam.Lens = lens;
-    }
-
-    public void AddWood()
-    { // set different wood types and values and materials
-        wood += 1;
     }
 }

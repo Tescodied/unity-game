@@ -504,6 +504,8 @@ GameObject:
   - component: {fileID: 8552083677422656677}
   - component: {fileID: 3314260835671573725}
   - component: {fileID: 1533102054638935691}
+  - component: {fileID: 1507800944024694706}
+  - component: {fileID: 5879267514639595703}
   - component: {fileID: 8403899685044042125}
   m_Layer: 0
   m_Name: Player
@@ -677,8 +679,9 @@ MonoBehaviour:
   pickaxeOnPlayerRendererBack: {fileID: 0}
   pickaxeOnPlayerHandBool: 0
   pickaxeOnPlayerBackBool: 0
-  woodCount: {fileID: 0}
   isFishing: 0
+  isCrafting: 0
+  craftMenuEnable: 0
 --- !u!114 &5921806888444786414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +816,32 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   speed: 5
+--- !u!114 &1507800944024694706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013656385878412618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7036a12ac5baf9d4d963f0413b2e188b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AssemblyRefs::CraftingTableLogic
+  overlay: {fileID: 0}
+  craftingUI: {fileID: 0}
+--- !u!114 &5879267514639595703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013656385878412618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dddb0399ddfd5f40a3d372f24dbfddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AssemblyRefs::TreeWoodGain
 --- !u!61 &8403899685044042125
 BoxCollider2D:
   m_ObjectHideFlags: 0

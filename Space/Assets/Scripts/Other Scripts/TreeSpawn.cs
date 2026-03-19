@@ -18,12 +18,14 @@ public class TreeSpawn : MonoBehaviour
     private readonly List<GameObject> spawnedTrees = new List<GameObject>();
 
     Player playerScript;
+    TreeWoodGain woodGainScript;
 
     void Start()
     {
         polygonCollider = GetComponent<PolygonCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<Player>();
+        woodGainScript = player.GetComponent<TreeWoodGain>();
 
         // Spawn Trees when loaded.
         // If we fail to place all trees (e.g. max attempts exceeded), destroy all spawned
@@ -118,7 +120,7 @@ public class TreeSpawn : MonoBehaviour
         {
             if (spawnedTrees[i].transform.position == treeCors)
             {
-                playerScript.AddWood();
+                woodGainScript.AddWood("Short");
                 SpriteRenderer treeRenderer = spawnedTrees[i].GetComponent<SpriteRenderer>();
                 Collider2D treeCollider = spawnedTrees[i].GetComponent<Collider2D>();
                 treeRenderer.sprite = choppedTree;
