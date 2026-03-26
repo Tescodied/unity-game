@@ -1,0 +1,14 @@
+make instructions disapear after press button first time
+progress bar
+    fish doesnt move until first jump
+waiting mecanic
+    change collider of tree to be more user friendly
+    player diagonal movement
+inventory
+    wood collection, display
+types of wood
+    toggle axe equip
+trees dont respawn on scene change DESTROYONLOAD
+add use text
+recipes outline when hover
+click animation

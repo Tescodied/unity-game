@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Mine
+  - Object
+  - Fishing
+  - Points
+  - Fishing Rod
+  - Shed
+  - Workbench
+  - Equipable
+  - Player Axe
+  - Leave
+  - Tree Collider
+  - Tree Spawner
+  - Player (Fishing)
+  - Player Axe (On Back)
+  - Player Pickaxe
+  - Player Pickaxe (On Back)
+  - Pickaxe Workbench
+  - Axe Blueprint
+  - Blueprint Unlock (Axe)
+  - Crafting Table
+  - Inventory Slot
+  - Crafting Recipe (Wooden Axe)
+  - Crafting Recipe (Wooden Pickaxe)
+  - Crafting Recipe Locked (Wooden Axe)
+  - Crafting Recipe Locked (Wooden Pickaxe)
+  - Recipes UI
+  - Crafting UI
+  - Crafting Inactive
+  - Default Crafting UI
+  - Crafting Items Necessary
+  - Crafting Items Results
+  - Inventory Management
+  - Disable Overlay (Inventory Item Hover)
+  - Container Background Configure
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - 
+  - Walls
+  - Floor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default
